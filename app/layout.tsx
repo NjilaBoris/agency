@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from "@/providers/ThemeProvider";
+import Navbar from "@/components/Navbar";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -27,8 +29,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${inter.variable} antialiased`}>
-        {children}
+      <body className={`${manrope.variable} ${inter.variable} antialiased `}>
+        <ThemeProvider
+          attribute="class"
+          enableSystem
+          defaultTheme="system"
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
