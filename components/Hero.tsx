@@ -8,7 +8,7 @@ import LandingImages from "./LandingImages";
 
 const Hero = () => {
   return (
-    <div className="pt-5 md:pt-15 lg:pt-20">
+    <section className="pt-5 md:pt-15 lg:pt-15">
       <Container className="max-lg:flex max-lg:flex-col max-md:px-2 items-center">
         <Heading as="h1" className="max-md:text-center max-md:text-2xl">
           Agents that do the work <br /> Approvals that keep you safe
@@ -30,7 +30,7 @@ const Hero = () => {
         </div>
         <LandingImages />
       </Container>
-    </div>
+    </section>
   );
 };
 
