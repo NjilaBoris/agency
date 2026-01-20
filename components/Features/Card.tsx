@@ -10,7 +10,7 @@ const Card = ({
 }) => {
   return (
     <div
-      className={cn("bg-neutral-50 dark:bg-neutral-400 rounded-lg", className)}
+      className={cn("bg-neutral-50  dark:bg-neutral-400 rounded-lg", className)}
     >
       {children}
     </div>

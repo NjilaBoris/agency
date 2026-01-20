@@ -6,6 +6,7 @@ import Card, { CardContent, CardCTA, CardSkeleton, CardTitle } from "./Card";
 import { IconPlus } from "@tabler/icons-react";
 import SkeletonOne from "./Skeleton/First";
 import SkeletonThree from "./Skeleton/Third";
+import SkeletonTwo from "./Skeleton/Second";
 
 const Features = () => {
   return (
@@ -32,7 +33,9 @@ const Features = () => {
           </CardContent>
         </Card>
         <Card>
-          <CardSkeleton></CardSkeleton>
+          <CardSkeleton>
+            <SkeletonTwo />
+          </CardSkeleton>
           <CardContent>
             <CardTitle>Automate Handoffs, Reduce Ops Friction</CardTitle>
             <CardCTA>

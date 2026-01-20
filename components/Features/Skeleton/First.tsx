@@ -10,12 +10,7 @@ import React from "react";
 
 const SkeletonOne = () => {
   return (
-    <div
-      className="perspective-distant h-full w-full translate-y-55 -translate-x-12 "
-      style={{
-        transform: "rotateZ(15deg) rotateY(-20deg) rotateX(30deg) scale(1.2)",
-      }}
-    >
+    <div className="perspective-distant rotate-z-15 -rotate-y-20 rotate-x-30 scale-[1.2] h-full w-full translate-y-55 -translate-x-12 ">
       <SkeletonCard
         className="absolute bottom-0 left-7 max-w-[90%] z-23"
         badge={<Badge text="10002" variant="danger" />}
