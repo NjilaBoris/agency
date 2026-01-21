@@ -1,6 +1,9 @@
 import Features from "@/components/Features";
+import FeaturesSecondary from "@/components/FeatureSecondary";
+
 import Hero from "@/components/Hero";
 import LogoCloud from "@/components/LogoCloud";
+import Speed from "@/components/Speed";
 
 const Home = () => {
   return (
@@ -9,6 +12,8 @@ const Home = () => {
         <Hero />
         <LogoCloud />
         <Features />
+        <Speed />
+        <FeaturesSecondary />
       </div>
     </>
   );
