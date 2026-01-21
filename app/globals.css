@@ -8,6 +8,8 @@
   --font-sans: var(--font-inter);
   --font-display: var(--font-manrope);
   --shadow-brand: var(--shadow-brand);
+  --shadow-inset: var(--shadow-inset);
+  --shadow-raised: var(--shadow-raised);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,6 +22,8 @@
 body {
 }
 :root {
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-highlight: var(--color-white);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -39,7 +43,8 @@ body {
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --shadow-brand: -82px 54px 27px 0px rgba(0, 0, 0, 0.01),
+  --shadow-brand:
+    -82px 54px 27px 0px rgba(0, 0, 0, 0.01),
     -52px 35px 25px 0px rgba(0, 0, 0, 0.04),
     -29px 19px 21px 0px rgba(0, 0, 0, 0.15),
     -13px 9px 16px 0px rgba(0, 0, 0, 0.25), -3px 2px 9px 0px rgba(0, 0, 0, 0.29);
@@ -56,7 +61,15 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
- 
+  --shadow-raised:
+    2px 2px 6px var(--color-shadow), -2px -2px 6px var(--color-highlight),
+    inset 0px 0px 0px var(--color-shadow),
+    inset 0px 0px 0px var(--color-highlight),
+    inset 1px 1px 2px var(--color-edge);
+  --shadow-inset:
+    1px 1px 2px var(--color-shadow), -1px -1px 2px var(--color-highlight),
+    inset 2px 2px 6px var(--color-shadow),
+    inset -2px -2px 6px var(--color-highlight);
 }
 
 .dark {
@@ -91,7 +104,9 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.439 0 0);
-   --shadow-brand: -82px 54px 27px 0px rgba(255, 255, 255, 0.01),
+
+  --shadow-brand:
+    -82px 54px 27px 0px rgba(255, 255, 255, 0.01),
     -52px 35px 25px 0px rgba(255, 255, 255, 0.04),
     -29px 19px 21px 0px rgba(255, 255, 255, 0.15),
     -13px 9px 16px 0px rgba(255, 255, 255, 0.25),

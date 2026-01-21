@@ -81,7 +81,7 @@ export const MobileNavbar = () => {
               <div className="flex items-center justify-end">
                 <Link
                   href="login"
-                  className="text-sm px-4 py-2 rounded-md  text-neutral-600 dark:text-neutral-400 font-medium"
+                  className="text-sm px-4 py-2 rounded-md   text-neutral-600 dark:text-neutral-400 font-medium"
                 >
                   Login
                 </Link>
@@ -111,7 +111,7 @@ export const DesktopNavbar = () => {
         ))}
       </div>
       <div className="flex items-center gap-4">
-        <Button className="text-sm px-4 py-2 rounded-md  text-neutral-600 dark:text-neutral-400 font-medium">
+        <Button className="text-sm px-4 py-2 rounded-md hover:shadow-inset text-neutral-600 dark:text-neutral-400 font-medium">
           Login
         </Button>
         <Button className="bg-neutral-700 text-white">Signup</Button>
