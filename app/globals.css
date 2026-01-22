@@ -10,6 +10,15 @@
   --shadow-brand: var(--shadow-brand);
   --shadow-inset: var(--shadow-inset);
   --shadow-raised: var(--shadow-raised);
+  --animate-orbit: orbit var(--orbit-transition) linear infinite;
+}
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-color-scheme: dark) {

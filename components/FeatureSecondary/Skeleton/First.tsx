@@ -13,7 +13,7 @@ import { motion } from "motion/react";
 
 export const SkeletonOne = () => {
   return (
-    <div className="bg-neutral-100 p-2 border mt-5 space-y-2 border-neutral-200  rounded-t-3xl flex-1 max-w-90  w-full mx-auto">
+    <div className="bg-neutral-100 p-2 border mt-5 space-y-2  overflow-hidden border-neutral-200  rounded-t-3xl flex-1 max-w-90  w-full mx-auto">
       <Card
         topIcon={<IconFilePlus className="stroke-white" />}
         title="Connect Data"
