@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 import { motion } from "motion/react";
 import { SkeletonOne } from "./Skeleton/First";
+import { SkeletonTwo } from "./Skeleton/Second";
 
 const FeaturesSecondary = () => {
   return (
@@ -28,7 +29,9 @@ const FeaturesSecondary = () => {
               Coordinate multiple agents across workflow using memory,
               interrups, and conditional logic
             </CardDescription>
-            <CardSkeleton>avb</CardSkeleton>
+            <CardSkeleton className="mt-2 overflow-hidden">
+              <SkeletonTwo />
+            </CardSkeleton>
           </div>
         </div>
       </Container>
@@ -64,7 +67,7 @@ export const CardSkeleton = ({
   return (
     <div
       className={cn(
-        "h-80 sm:h-60 relative md:h-80 flex flex-col perspective-distant ",
+        "h-80 sm:h-60 relative overflow-clip  md:h-80 flex  flex-col perspective-distant ",
         className
       )}
     >
