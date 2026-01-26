@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { SkeletonOne } from "./Skeleton/First";
 import { SkeletonTwo } from "./Skeleton/Second";
+import { IconDesk, IconNetworkOff } from "@tabler/icons-react";
 
 const FeaturesSecondary = () => {
   return (
@@ -17,7 +18,7 @@ const FeaturesSecondary = () => {
               Design, Launch and customize AI agents for marketing, sales,
               support and ops, built around your workflows
             </CardDescription>
-            <CardSkeleton>
+            <CardSkeleton className="mask-radial-from-50% mask-b-from-90% ">
               <SkeletonOne />
             </CardSkeleton>
           </div>
@@ -29,9 +30,46 @@ const FeaturesSecondary = () => {
               Coordinate multiple agents across workflow using memory,
               interrups, and conditional logic
             </CardDescription>
-            <CardSkeleton className="mt-2 overflow-hidden">
+            <CardSkeleton className="mt-2 overflow-hidden mask-radial-from-50% mask-r-from-90%  mask-l-from-50%">
               <SkeletonTwo />
             </CardSkeleton>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-10 mt-10 md:mt-20">
+          <div className="p-2">
+            <div className="flex items-center gap-2">
+              <IconDesk className="fill-neutral-200 stroke-neutral-400 size-5" />
+              <h3 className="font-bold leading-0 text-[0.9rem] text-neutral-600">
+                WorkFlow Automation
+              </h3>
+            </div>
+            <p className="text-neutral-600 mt-2 text-[0.8rem]">
+              Automate campaigns, tickets and CRM updates without manual
+              handoffs
+            </p>
+          </div>
+          <div className=" p-2">
+            <div className="flex items-center gap-2">
+              <IconNetworkOff className="fill-neutral-200 stroke-neutral-400 size-5" />
+              <h3 className="font-bold leading-0 text-[0.9rem] text-neutral-600">
+                Integration Fabric
+              </h3>
+            </div>
+            <p className="text-neutral-600  mt-2 text-[0.8rem]">
+              Connect CRMs, service desk, data warehouse and cloud app
+              seamlessly
+            </p>
+          </div>
+          <div className=" p-2">
+            <div className="flex items-center gap-2">
+              <IconDesk className="fill-neutral-200 stroke-neutral-400 size-5" />
+              <h3 className="font-bold leading-0  text-[0.9rem] text-neutral-600">
+                Human-in-The-loop
+              </h3>
+            </div>
+            <p className="text-neutral-600  mt-2 text-[0.8rem]">
+              App reviews, approvals and escalations without slowing work
+            </p>
           </div>
         </div>
       </Container>
