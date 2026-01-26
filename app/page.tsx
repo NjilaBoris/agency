@@ -1,8 +1,10 @@
 import Features from "@/components/Features";
 import FeaturesSecondary from "@/components/FeatureSecondary";
+import FeaturesTertiary from "@/components/FeatureTertiary";
 
 import Hero from "@/components/Hero";
 import LogoCloud from "@/components/LogoCloud";
+import Outcomes from "@/components/Outcomes";
 import Speed from "@/components/Speed";
 
 const Home = () => {
@@ -14,6 +16,8 @@ const Home = () => {
         <Features />
         <Speed />
         <FeaturesSecondary />
+        <Outcomes />
+        <FeaturesTertiary />
       </div>
     </>
   );
