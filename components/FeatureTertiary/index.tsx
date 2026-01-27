@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { SkeletonOne } from "./Skeleton/First";
 import { SkeletonTwo } from "./Skeleton/Second";
-import { IconDesk, IconNetworkOff } from "@tabler/icons-react";
 
 const FeaturesTertiary = () => {
   return (
@@ -29,7 +28,7 @@ const FeaturesTertiary = () => {
             <CardDescription>
               Controls who can launch, review, or manage agents based on roles
             </CardDescription>
-            <CardSkeleton className="mt-2 overflow-hidden mask-radial-from-50% mask-r-from-90%  mask-l-from-50%">
+            <CardSkeleton className="mask-radial-from-20%">
               <SkeletonTwo />
             </CardSkeleton>
           </div>
