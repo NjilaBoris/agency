@@ -1,94 +1,91 @@
 "use client";
 
-import { Slack, Stripe } from "@/icons";
+import { LogoIcon } from "@/components/Logo";
 import { cn } from "@/lib/utils";
-import { IconBrandBlogger, IconCircleDashedCheck } from "@tabler/icons-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export const SkeletonTwo = () => {
   return (
-    <div
-      style={{
-        transform: "rotateY(20deg) rotateX(40deg) rotateZ(-20deg) ",
-        overflow: "hidden",
-      }}
-      className="bg-neutral-100   border   border-neutral-200 flex items-center justify-center  rounded-t-3xl flex-1   w-full"
-    >
-      <Circle className="flex absolute  translate-y-1/2 items-center justify-center border-neutral-200 shadow-sm">
-        <IconBrandBlogger className="stroke-neutral-400 size-8 stroke-1 " />
-      </Circle>
-      <Circle className="shadow-sm  translate-y-[1%] animate-orbit [--orbit-transition:13s] size-50 bg-neutral-100/80 z-9 relative">
-        <div className="flex items-center absolute -translate-x-10 justify-center z-20 bg-white rounded-sm p-1 ring-1 ring-black/10 border border-transparent shadow-black/10 size-8">
-          <Slack className="size-10 " />
-        </div>
-      </Circle>
-      <Circle className="shadow-sm translate-y-[3%] animate-orbit [--orbit-transition:8s]  size-75 bg-neutral-50/30 z-8">
-        <div className="flex items-center absolute translate-x-1 justify-center z-20 bg-white rounded-sm p-1 ring-1 ring-black/10 border border-transparent shadow-black/10 size-8">
-          <SkeletonCard
-            className="absolute bottom-0 left-12 shadow-sm"
-            title="Campaign Planner"
-            description="Creates clear, ready-to-use campaign briefs using brief info, audience data, and past results"
-            icon={
-              <IconCircleDashedCheck className="size-5 fill-blue-300 stroke-blue-400" />
-            }
-          />
-          <Stripe className="size-10 " />
-        </div>
-      </Circle>
-      <Circle className="shadow-sm  size-95 -translate-y-[8%] bg-neutral-50/30 z-7"></Circle>
-    </div>
-  );
-};
-
-export const Circle = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children?: React.ReactNode;
-}) => {
-  return (
-    <div
-      className={cn(
-        "size-40 bg-white border z-10  border-transparent rounded-full absolute inset-0 mx-auto ",
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-};
-
-const SkeletonCard = ({
-  icon,
-  title,
-  description,
-  badge,
-  className,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  badge?: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div
-      className={cn(
-        " shadow-2xl h-fit my-auto p-2 mx-auto w-fit rounded-2xl bg-neutral-100 border border-neutral-200 dark:border-neutral-700",
-        className
-      )}
-    >
-      <div className="flex gap-3 items-center">
-        {icon}
-        <p className="font-normal text-[0.2rem] text-balance dark:text-white text-black">
-          {title}
-        </p>
-        {badge}
+    <div className="h-full mt-5 px-8 gap-2  rounded-t-3xl flex-1 flex flex-col items-center justify-center  w-full">
+      <div className="grid grid-cols-4 justify-center max-w-[18rem] mx-auto gap-1">
+        <Item />
+        <Item src="/img2.avif" />
+        <Item src="/img3.avif" />
+        <Item />
       </div>
-      <p className="text-[0.2rem]  text-neutral-400/80 dark:text-neutral-400 font-medium mt-1">
-        {description}
-      </p>
+      <div className="grid grid-cols-5 gap-1">
+        <Item />
+        <Item src="/img2.avif" />
+        <Item
+          containerClassName="to-black/50 via-transparent to-black/50"
+          className="overflow-hidden"
+        >
+          <div className="bg-white w-full h-full flex items-center justify-center rounded-xl">
+            <LogoIcon className="size-12" />
+          </div>
+        </Item>
+        <Item src="/img4.avif" />
+        <Item />
+      </div>
+      <div className="grid grid-cols-4 justify-center max-w-[18rem] mx-auto gap-1 ">
+        <Item />
+        <Item src="/img2.avif" />
+        <Item src="/img3.avif" />
+        <Item />
+      </div>
+    </div>
+  );
+};
+const Item = ({
+  children,
+  className,
+  containerClassName,
+  src,
+}: {
+  children?: React.ReactNode;
+  className?: string;
+  containerClassName?: string;
+  src?: string;
+}) => {
+  return (
+    <div
+      className={cn(
+        "w-full justify-self-center aspect-square rounded-xl border border-dashed border-neutral-200 relative p-px",
+        "[--pattern-fg:var(--color-neutral-950)]/5 dark:[--pattern-fg:var(--color-neutral)]/10",
+        className
+      )}
+    >
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{
+          duration: Math.random() * 0.8 + 0.2,
+          delay: Math.random() * 0.8 + 0.2,
+        }}
+        className={cn(
+          "flex items-center p-px relative justify-center w-full h-full  rounded-xl  z-10",
+          src && "bg-linear-to-br from-white via-transparent to-white",
+          containerClassName
+        )}
+      >
+        {children ?? (
+          <>
+            {src && (
+              <div>
+                <Image
+                  src={src}
+                  alt="item"
+                  height={80}
+                  width={80}
+                  className="object-cover aspect-square rounded-xl relative z-20"
+                />
+              </div>
+            )}
+          </>
+        )}
+      </motion.div>
+      <div className="absolute inset-0  bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[5px_5px] bg-fixed"></div>
     </div>
   );
 };
