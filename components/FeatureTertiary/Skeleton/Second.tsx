@@ -10,7 +10,7 @@ export const SkeletonTwo = () => {
     <div className="h-full mt-5 px-8 gap-2  rounded-t-3xl flex-1 flex flex-col items-center justify-center  w-full">
       <div className="grid grid-cols-4 justify-center max-w-[18rem] mx-auto gap-1">
         <Item />
-        <Item src="/img2.avif" />
+        <Item src="/img1.avif" />
         <Item src="/img3.avif" />
         <Item />
       </div>
@@ -30,8 +30,8 @@ export const SkeletonTwo = () => {
       </div>
       <div className="grid grid-cols-4 justify-center max-w-[18rem] mx-auto gap-1 ">
         <Item />
-        <Item src="/img2.avif" />
-        <Item src="/img3.avif" />
+        <Item src="/img5.avif" />
+        <Item src="/img6.avif" />
         <Item />
       </div>
     </div>
