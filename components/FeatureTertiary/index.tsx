@@ -5,31 +5,66 @@ import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { SkeletonOne } from "./Skeleton/First";
 import { SkeletonTwo } from "./Skeleton/Second";
+import SkeletonThree from "./Skeleton/Third";
+import { SkeletonFour } from "./Skeleton/Fourth";
 
 const FeaturesTertiary = () => {
   return (
     <section className="pt-5 md:pt-15 lg:pt-15 overflow-hidden relative">
       <Container className="">
         <div className="grid grid-cols-1 divide-x divide-neutral-200 dark:divide-neutral-800 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800">
-          <div className="p-8">
-            <h2 className="text-lg font-bold text-neutral-800">Audit Trail</h2>
-            <CardDescription>
-              Track every agent action with full input-output visibility and
-              timestamps.
-            </CardDescription>
+          <div className="border-r border-neutral-200 dark:border-neutral-800">
+            <CardContent>
+              <h2 className="text-lg font-bold text-neutral-800">
+                Audit Trail
+              </h2>
+              <CardDescription>
+                Track every agent action with full input-output visibility and
+                timestamps.
+              </CardDescription>
+            </CardContent>
             <CardSkeleton className="mt-5">
               <SkeletonOne />
             </CardSkeleton>
           </div>
-          <div className="p-8">
-            <h2 className="text-lg font-bold text-neutral-800">
-              Role-Based Access
-            </h2>
-            <CardDescription>
-              Controls who can launch, review, or manage agents based on roles
-            </CardDescription>
+          <div className="border-b border-neutral-200 dark:border-neutral-800">
+            <CardContent>
+              <h2 className="text-lg font-bold text-neutral-800">
+                Role-Based Access
+              </h2>
+              <CardDescription>
+                Controls who can launch, review, or manage agents based on roles
+              </CardDescription>
+            </CardContent>
             <CardSkeleton className="mask-radial-from-20%">
               <SkeletonTwo />
+            </CardSkeleton>
+          </div>
+          <div className=" dark:border-neutral-800">
+            <CardContent>
+              <h2 className="text-lg font-bold text-neutral-800">
+                Approval Queue
+              </h2>
+              <CardDescription>
+                Sends agent-generated content to human reviewersbefore it&apos;s
+                published
+              </CardDescription>
+            </CardContent>
+            <CardSkeleton className="mask-radial-from-20% mask-r-from-50%">
+              <SkeletonThree />
+            </CardSkeleton>
+          </div>
+          <div className=" dark:border-neutral-800">
+            <CardContent>
+              <h2 className="text-lg font-bold text-neutral-800">
+                Guardrail Engine
+              </h2>
+              <CardDescription>
+                Applies brand, tone, and policy checks before output goes live.
+              </CardDescription>
+            </CardContent>
+            <CardSkeleton className="">
+              <SkeletonFour />
             </CardSkeleton>
           </div>
         </div>
