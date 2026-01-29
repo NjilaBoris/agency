@@ -21,7 +21,7 @@ const LandingImages = () => {
           height={1060}
           width={1920}
           className={cn(
-            "rounded-lg absolute aspect-video inset-0 mask-r-from-20% mask-b-from-20% shadow-2xl"
+            "rounded-lg absolute aspect-video pointer-events-none inset-0 mask-r-from-20% mask-b-from-20% shadow-2xl"
           )}
           style={{ transform: "rotateY(20deg) rotateX(40deg) rotateZ(-20deg)" }}
         />
@@ -42,7 +42,7 @@ const LandingImages = () => {
           height={1080}
           width={1920}
           className={cn(
-            "rounded-lg absolute aspect-video inset-0 mask-r-from-50% md:translate-y-20 mask-b-from-50% shadow-2xl dark:border-neutral-400 border-4 border-neutral-200"
+            "rounded-lg absolute aspect-video pointer-events-none inset-0 mask-r-from-50% md:translate-y-20 mask-b-from-50% shadow-2xl dark:border-neutral-400 border-4 border-neutral-200"
           )}
           style={{ transform: "rotateY(20deg) rotateX(40deg) rotateZ(-20deg)" }}
         />
