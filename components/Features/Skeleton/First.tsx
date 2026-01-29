@@ -57,7 +57,7 @@ const SkeletonCard = ({
   return (
     <div
       className={cn(
-        "max-w-[85%] shadow-2xl h-fit my-auto p-2 mx-auto w-full rounded-2xl bg-neutral-100 border border-neutral-200 dark:border-neutral-700",
+        "max-w-[85%] shadow-2xl h-fit my-auto p-2 mx-auto w-full rounded-2xl bg-white border border-neutral-200 dark:border-neutral-700",
         className
       )}
     >
@@ -68,7 +68,7 @@ const SkeletonCard = ({
         </p>
         {badge}
       </div>
-      <p className="text-[0.7rem] text-neutral-400/80 dark:text-neutral-400 font-medium mt-3">
+      <p className="text-[0.7rem] text-neutral-500 dark:text-neutral-400 font-light mt-3">
         {description}
       </p>
       <div className="flex items-center gap-2 flex-wrap mt-2">
