@@ -13,7 +13,7 @@ const FeaturesTertiary = () => {
     <section className="pt-5 md:pt-15 lg:pt-15 overflow-hidden relative">
       <Container className="">
         <div className="grid grid-cols-1 divide-x divide-neutral-200 dark:divide-neutral-800 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800">
-          <div className="border-r border-neutral-200 dark:border-neutral-800">
+          <div className="md:border-r border-neutral-200 dark:border-neutral-800">
             <CardContent>
               <h2 className="text-lg font-bold text-neutral-800">
                 Audit Trail

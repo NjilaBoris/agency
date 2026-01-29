@@ -16,7 +16,7 @@ const LogoCloud = () => {
     <section>
       <h2 className="text-neutral-600 font-medium dark:text-neutral-400 text-lg pt-10 text-center max-w-xl mx-auto">
         Trusted by moderm operators industries.
-        <br />{" "}
+        <br className="hidden md:block" />{" "}
         <span className="text-neutral-400">
           From pilots to scale without chaos
         </span>

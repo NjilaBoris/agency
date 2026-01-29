@@ -12,24 +12,30 @@ const FeaturesSecondary = () => {
     <section className="pt-5 md:pt-15 lg:pt-15 overflow-hidden relative">
       <Container className="">
         <div className="grid grid-cols-1 divide-x divide-neutral-200 dark:divide-neutral-800 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800">
-          <div className="p-8">
-            <h2 className="text-lg font-bold text-neutral-800">Agent Studio</h2>
-            <CardDescription>
-              Design, Launch and customize AI agents for marketing, sales,
-              support and ops, built around your workflows
-            </CardDescription>
+          <div>
+            <CardContent>
+              <h2 className="text-lg font-bold text-neutral-800">
+                Agent Studio
+              </h2>
+              <CardDescription>
+                Design, Launch and customize AI agents for marketing, sales,
+                support and ops, built around your workflows
+              </CardDescription>
+            </CardContent>
             <CardSkeleton className="mask-radial-from-50% mask-b-from-90% ">
               <SkeletonOne />
             </CardSkeleton>
           </div>
-          <div className="p-8">
-            <h2 className="text-lg font-bold text-neutral-800">
-              Multi-Agent orchestration
-            </h2>
-            <CardDescription>
-              Coordinate multiple agents across workflow using memory,
-              interrups, and conditional logic
-            </CardDescription>
+          <div>
+            <CardContent>
+              <h2 className="text-lg font-bold text-neutral-800">
+                Multi-Agent orchestration
+              </h2>
+              <CardDescription>
+                Coordinate multiple agents across workflow using memory,
+                interrups, and conditional logic
+              </CardDescription>
+            </CardContent>
             <CardSkeleton className="mt-2 overflow-hidden mask-radial-from-50% mask-r-from-90%  mask-l-from-50%">
               <SkeletonTwo />
             </CardSkeleton>
