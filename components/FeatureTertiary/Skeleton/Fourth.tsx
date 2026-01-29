@@ -12,7 +12,8 @@ import {
 } from "@tabler/icons-react";
 
 import { motion } from "motion/react";
-import { useState } from "react";
+
+import { useEffect, useRef, useState } from "react";
 
 export const SkeletonFour = () => {
   const items = [
@@ -147,7 +148,29 @@ export const SkeletonFour = () => {
       ],
     },
   ];
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const currentIndexRef = useRef(0);
   const [selected, setSelected] = useState(items[0]);
+
+  const startAutoPlay = () => {
+    stopAutoPlay();
+    intervalRef.current = setInterval(() => {
+      currentIndexRef.current = (currentIndexRef.current + 1) % items.length;
+      setSelected(items[currentIndexRef.current]);
+    }, 2000);
+  };
+  const stopAutoPlay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    startAutoPlay();
+    return () => stopAutoPlay();
+  }, []);
+
   return (
     <div>
       <div className="flex items-center mx-auto max-w-lg justify-center gap-4 flex-wrap mb-4">
@@ -156,11 +179,17 @@ export const SkeletonFour = () => {
             onClick={() => setSelected(item)}
             key={index}
             className={cn(
-              "px-2 py-1 text-[0.6rem] opacity-50 cursor-pointer active:scale-98 transition-all duration-200 gap-2 rounded-sm items-center justify-center flex",
+              "px-2 py-1 text-[0.6rem] relative opacity-50 cursor-pointer active:scale-98 transition-all duration-200 gap-2 rounded-sm items-center justify-center flex",
               item.className,
               selected.title === item.title && "opacity-100"
             )}
           >
+            {selected.title === item.title && (
+              <motion.div
+                layoutId="selected"
+                className="absolute inset-0 rounded-[5px] shadow-inner"
+              ></motion.div>
+            )}
             {item.icon}
             {item.title}
           </button>
